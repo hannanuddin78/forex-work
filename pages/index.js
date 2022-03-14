@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -9,9 +10,128 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className='p-5 m-5 bg-green-500 rounded'>
-        <h1 className='text-center'>Appointment</h1>
-        <div></div>
+      <div className='bg-[#fef0f1] p-8'>
+        <div className="bg-white rounded-3xl p-8 shadow-around mx-auto ">
+          <h1 className="text-center text-4xl mt-3 mb-20">Appointment</h1>
+            {/* search-celander */}
+          <div className="grid grid-cols-2">
+            <div className="search-users w-[320px] sm:w-full justify-start relative">
+              <input type="text" placeholder="Search Users....." className="w-[320px] rounded-lg border-solid border-neutral-300 p-2 h-[36px]" />
+              <span className="search-icon absolute right-2 top-5">
+                <Image
+                  src="/search.svg"
+                  alt="Picture of the author"
+                  width={20}
+                  height={20}
+                />
+              </span>
+            </div>
+            <div className="filter-by flex items-center justify-end">
+              <p>Filter By</p>
+              <div className="date-picker relative ml-6 flex w-[320px] h-[50px]  border-2 ">
+                <input type="text" placeholder="14th July 2022" className="border-2 border-solid rounded-lg border-[#e22424] focus:outline-orange-600 text-center w-full h-full" />
+                <div className="absolute datepicker-icon w-[60px] bg-[#e22424] h-[56px] flex items-center justify-center rounded-lg">
+                  <span className="h-6 w-6 ">
+                    <Image
+                      src="/calendar-line.svg"
+                      alt=""
+                      width={33}
+                      height={31}
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* up coming-receive */}
+          <div className="upr grid grid-cols-3 text-center mt-10">
+            <div className="upcoming divider-middle border-solid border-b-2 border-x-0 border-t-0 border-[#EEEEEE] hover:border-orange-600 pb-2">
+              <p>Upcoming</p>
+            </div>
+            <div className="previous divider-middle border-b-2 border-solid border-[#EEEEEE] border-t-0 border-x-0 hover:border-orange-600 pb-2">
+              <p>Previous</p>
+            </div>
+            <div className="request divider-middle border-b-2 border-solid border-orange-600 border-t-0 border-x-0 hover:border-orange-600 pb-2 ">
+              <p>Request</p>
+            </div>
+          </div>
+
+          <div className="sent-received w-[200px] grid grid-cols-2 text-center mx-auto mt-10 mb-12">
+            <div className="sent divider-middle border-b-2 border-solid border-t-0 border-x-0 border-[#EEEEEE] hover:border-orange-600 ">
+              <p>Sent</p>
+            </div>
+            <div className="received divider-middle border-b-2 border-solid  border-t-0 border-x-0 border-orange-600 hover:border-orange-600">
+              <p>Received</p>
+            </div>
+          </div>
+          {/* result card */}
+          <div className="container">
+            <div className="result grid grid-cols-3 shadow-around rounded-3xl flex items-center p-5 mb-10">
+              <div className="infos flex">
+                <div className="picture relative w-[100px] h-[100px]">
+                  <img src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80" alt="" className="w-[91px] h-[94px] rounded-xl bg-gray" />
+                  <span className="w-[25px] h-[25px] flex justify-center absolute bottom-0 right-0 border-solid border-[#e22424] border rounded-full bg-white">
+                    <Image
+                      src="/manIcon.svg"
+                      alt=""
+                      width={13}
+                      height={15}
+                    />
+                  </span>
+                </div>
+                <div className="about ml-4">
+                  <p className="mt-4">Masud Reja</p>
+                  <p className="mt-4">Id: Dp2935-897</p>
+                </div>
+              </div>
+              <div className="date-about">
+                <p>13th sept 2021, 10:00 AM</p>
+                <p>Meeting For Vendor Community.</p>
+              </div>
+              <div className="accept-cancel flex justify-end mr-10">
+                <p className="text-[#e22424]">Canceled</p>
+              </div>
+            </div>
+            <div className="result grid grid-cols-3 shadow-around rounded-3xl flex items-center p-5 mb-6">
+              <div className="infos flex">
+                <div className="picture relative w-[100px] h-[100px]">
+                  <img src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=320&h=320&q=80" alt="" className="w-[91px] h-[94px] rounded-xl bg-gray" />
+                  <span className="w-[25px] h-[25px] flex justify-center absolute bottom-0 right-0 border-solid border-[#e22424] border rounded-full bg-white">
+                    <Image
+                      src="/manIcon.svg"
+                      alt=""
+                      width={13}
+                      height={15}
+                    />
+                  </span>
+                </div>
+                <div className="about ml-4">
+                  <p className="mt-4">Masud Reja</p>
+                  <p className="mt-4">Id: Dp2935-897</p>
+                </div>
+              </div>
+              <div className="date-about">
+                <p>13th sept 2021, 10:00 AM</p>
+                <p>Meeting For Vendor Community.</p>
+              </div>
+              <div className="accept-cancel flex justify-end">
+                <button className="accept-btn rounded-lg mr-10 px-10 py-2 bg-[#e22424] border-solid border-2 border-[#e22424] text-white">Accept</button>
+                <button className="cancel-btn rounded-lg px-10 py-2 bg-white border-2 border-solid border-[#e22424] text-[#e22424]">Cancel</button>
+              </div>
+            </div>
+            <div className="flex justify-end mt-20 mr-5">
+              <span className="bg-[#E22424] rounded-full h-10 w-10 flex items-center justify-center">
+                <Image
+                  src="/addIcon.svg"
+                  alt="Picture of the author"
+                  width={20}
+                  height={20}
+                />
+              </span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   )

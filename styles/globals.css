@@ -1,19 +1,35 @@
-@tailwind base;
+/* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
-/* html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
+.shadow-around {
+  box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.1);
 }
-
-* {
-  box-sizing: border-box;
-} */
+.divider-middle {
+  position: relative;
+}
+.divider-middle:after {
+  content: "";
+  width: 2px;
+  height: 23px;
+  background: #ddd;
+  position: absolute;
+  top: 16px;
+  bottom: 0;
+  right: 0;
+}
+.divider-middle:last-child:after {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
